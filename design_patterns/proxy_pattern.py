@@ -28,8 +28,11 @@ class ProxyJsonReader(IConfReader):
     def __init__(self, input_data):
         self.reader = JsonReader(input_data)
 
+    @property
+    def data(self):
+        return self.reader.data
+
     def read(self):
-        print("proxy reader")
         self.reader.read()
 
 if __name__ == '__main__':
